@@ -13,14 +13,9 @@ public class Main {
 		
 	
 		Lista l = new Lista(5);
-		l.adcionar_posicao(0, 2);
-		l.adicionar_inicio(4);
-		l.adicionar_inicio(3);
-		l.adicionar_inicio(1);
-		l.adicionar_inicio(7);
-		l.remover_posicao(2);
-		l.mostrar();
 		
+		l.removerfinal();
+		l.mostrar();
 		
 		
 	

@@ -41,11 +41,12 @@ private int num_elementos;
 	}
 
 	int removerfinal(){
-		int numero_removido=lista[this.num_elementos-1];
+		int numero_removido=0;
 		if(lista_vazia()){
 			System.out.println("lista vazia");
 		}else{
 			lista[num_elementos-1]=0;
+			numero_removido=lista[num_elementos-1];
 		}
 		this.num_elementos=this.num_elementos-1;
 		return numero_removido;
