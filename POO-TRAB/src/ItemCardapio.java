@@ -18,6 +18,11 @@ if(b instanceof Bebida){
 	System.out.println("inserido com sucesso");
 }
 }
+void MostrarCardapio(ItemCardapio item){
+	for(int i=0;i<2;i++){
+		
+	}
+}
 
 
 public String getNome() {
