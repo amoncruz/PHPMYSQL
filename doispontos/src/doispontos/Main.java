@@ -3,28 +3,39 @@ package doispontos;
 public class Main {
 
 	public static void main(String[] args) {
-		Fila f=new Fila(6);
+		Pilha p1= new Pilha(4);
+		Fila f=new Fila(4);
 		f.enfileirar(3);
 		f.enfileirar(4);
 		f.enfileirar(9);
-		f.desenfileirar();
-		
-	
-		
-	
-		Lista l = new Lista(5);
-		
-		l.removerfinal();
-		l.mostrar();
-		
-		
-	
-
-		
-		Pilha p= new Pilha(4);
-		p.empilhar(6);
-		p.empilhar(4);
+		f.enfileirar(4);
+		inverter(f, p1);
 	
 	}
+	public static void inverter(Fila f,Pilha p1){
+		System.out.println("Fila");
+		f.mostrar();
+		System.out.println("--------------------");
+		for(int i=0;i<4;i++){
+			int aux=f.desenfileirar();
+			p1.empilhar(aux);
+		}
+		System.out.println("Pilha");
+		p1.mostrar();
+		System.out.println("--------------------");
+		for(int x=0;x<4;x++){
+			int aux;
+			aux=p1.desempilhar();
+			f.enfileirar(aux);
+		}
+		System.out.println("Fila");
+		f.mostrar();
+		System.out.println("--------------------");
+		System.out.println("Pilha");
+		p1.mostrar();
+	}
+
+	
 
 }
+

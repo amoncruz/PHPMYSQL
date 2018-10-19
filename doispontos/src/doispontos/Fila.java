@@ -2,6 +2,19 @@ package doispontos;
 
 public class Fila {
 private int[] fila;
+private int[] getFila() {
+	return fila;
+}
+public void setFila(int[] fila) {
+	this.fila = fila;
+}
+public int getNum_elementos() {
+	return num_elementos;
+}
+public void setNum_elementos(int num_elementos) {
+	this.num_elementos = num_elementos;
+}
+
 private int num_elementos;
 
 public Fila(int t){
@@ -21,7 +34,7 @@ boolean fila_vazia(){
 	}
 }
 	 boolean fila_cheia(){
-		if(num_elementos>=fila.length-1){
+		if(num_elementos>fila.length-1){
 		return true;
 		}else{
 			return false;

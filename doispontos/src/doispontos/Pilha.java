@@ -23,7 +23,7 @@ boolean pilha_vazia(){
 	}
 }
 	 boolean pilha_cheia(){
-		if(num_elementos>=pilha.length-1){
+		if(num_elementos>pilha.length-1){
 		return true;
 		}else{
 			return false;
@@ -46,6 +46,17 @@ boolean pilha_vazia(){
 				
 		
 		}
+	 int desempilhar(){
+		 int removido=0;
+		 if(pilha_vazia()){
+			 System.out.println("pilha vazia");
+		 }else{
+			 removido=pilha[num_elementos-1];
+			 pilha[num_elementos-1]=0;
+			 num_elementos--;
+		 }
+		return removido; 
+	 }
 	 public void mostrar(){
 			for(int i=0;i<pilha.length;i++){
 				System.out.println(pilha[i]);

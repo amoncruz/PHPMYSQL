@@ -18,7 +18,7 @@ private int num_elementos;
 		}
 	}
 	 boolean lista_cheia(){
-		if(num_elementos>=lista.length){
+		if(num_elementos>lista.length){
 		return true;
 		}else{
 			return false;
