@@ -26,5 +26,13 @@ boolean estoque_vazio(){
 int getEstoque(){
 	return this.qtd;
 }
+@Override
+public double getPreco(){
+	return this.preco;
+}
+@Override
+public String getNome(){
+	return this.nome;
+}
 
 }
