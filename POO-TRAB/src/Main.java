@@ -8,16 +8,21 @@ public class Main {
 		List<ItemCardapio> item= new ArrayList();
 		Bebida coca= new Bebida("coca",3.95);
 		Bebida cerveja= new Bebida("cerveja",5.15);
+		coca.Estocar(20);
+		System.out.println(coca.getEstoque());
+		cerveja.Estocar(30);
+		System.out.println(cerveja.getEstoque());
 		item.add(coca);
 		item.add(cerveja);
+		Pedido p = new Pedido(coca);
 		
 		
+			ItemCardapio.MostrarCardapio(item);
 		
-		  for(int i=0; i<item.size(); i++){   
-	            System.out.println(item.get(i).getNome() + " " + item.get(i).getPreco());   
-	        }  
+		  
 		
 	}
+	
 	
 
 }

@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.List;
+
 
 public class ItemCardapio {
 protected String nome;
@@ -18,10 +21,10 @@ if(b instanceof Bebida){
 	System.out.println("inserido com sucesso");
 }
 }
-void MostrarCardapio(ItemCardapio item){
-	for(int i=0;i<2;i++){
-		
-	}
+public static void MostrarCardapio(List item){
+	 for(int i=0; i<item.size(); i++){   
+         System.out.println(((ItemCardapio) item.get(i)).getNome() + " " + ((ItemCardapio) item.get(i)).getPreco());   
+     } 
 }
 
 

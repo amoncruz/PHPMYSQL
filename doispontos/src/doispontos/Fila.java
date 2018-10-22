@@ -2,6 +2,7 @@ package doispontos;
 
 public class Fila {
 private int[] fila;
+
 private int[] getFila() {
 	return fila;
 }
