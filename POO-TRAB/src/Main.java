@@ -5,7 +5,10 @@ import java.util.List;
 public class Main {
 
 	public static void main(String[] args) {
-		List<ItemCardapio> item= new ArrayList();
+		
+		List<ItemCardapio> item= new ArrayList<ItemCardapio>();
+		
+		List<Pedido> itemp = new ArrayList<Pedido>();
 		Bebida coca= new Bebida("coca",3.95);
 		Bebida cerveja= new Bebida("cerveja",5.15);
 		Lanche salgado= new Lanche("salgado",2.65);
@@ -18,16 +21,18 @@ public class Main {
 		item.add(salgado);
 		Cliente amon =new Cliente("amon",88477246,"rua c 900","motel");
 		Cliente felipe =new Cliente("felipe",88477246,"rua c 900","motel");
-		Pedido a = new Pedido(salgado,amon);
+		
+	
 		Pedido p = new Pedido(coca,amon);
+		itemp.add(p);
 		p.RealizarPagamento();
 		p.RealizarPagamento();
 		Pedido b= new Pedido(cerveja,felipe);
-	
+		
 		Pedido.TotalDoPedido(amon);
 		
 			ItemCardapio.MostrarCardapio(item);
-		
+		Pedido.PedidoDoDia(itemp);
 		  
 		
 	}

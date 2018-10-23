@@ -15,13 +15,8 @@ public ItemCardapio(String nome, double preco) {
 public ItemCardapio(){
 	
 }
-void inserirNoCardapio(Bebida b){
-if(b instanceof Bebida){
-	ItemCardapio item= new ItemCardapio(b.getNome(),b.getPreco());
-	System.out.println("inserido com sucesso");
-}
-}
-public static void MostrarCardapio(List item){
+
+public static void MostrarCardapio(List<ItemCardapio> item){
 	 for(int i=0; i<item.size(); i++){   
          System.out.println(((ItemCardapio) item.get(i)).getNome() + " " + ((ItemCardapio) item.get(i)).getPreco());   
      } 
