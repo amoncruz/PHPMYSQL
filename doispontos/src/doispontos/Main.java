@@ -17,6 +17,7 @@ l.adicionar_inicio(2);
 l.adicionar_inicio(12);
 l.adicionar_inicio(15);
 l.adicionar_inicio(13);
+l.remover_posicao(1);
 l.mostrar();
 
 	}

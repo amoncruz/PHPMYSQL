@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Pedido {
 	
-	public static double total;
+	private double total;
 	private int qt;
 	private boolean pago=false;
 	private Date data;
@@ -19,15 +19,16 @@ public class Pedido {
 			Scanner c = new Scanner(System.in);
 			System.out.println("Digite a quantide de Bebida desejada");
 			qt=c.nextInt();
-			Pedido.total+=(qt*b.getPreco());
+			this.total+=(qt*b.getPreco());
 			b.diminuirDoEstoque(qt);
 			System.out.println(b.getEstoque());
 			
 		}	
 	}
-	static double TotalDoPedido(Cliente cliente){
-	System.out.println("Nome do cliente "+cliente.getNome()+" Total: "+Pedido.total);
-	return Pedido.total;
+	double TotalDoPedido(Cliente cliente){
+	
+	System.out.println("Nome do cliente "+cliente.getNome()+" Total: "+this.total);
+	return this.total;
 
 }
 	
@@ -38,7 +39,7 @@ public class Pedido {
 			Scanner c = new Scanner(System.in);
 			System.out.println("Digite a quantide de Bebida desejada");
 			qt=c.nextInt();
-			Pedido.total+=(qt*b.getPreco());
+			this.total+=(qt*b.getPreco());
 		
 		}
 		
@@ -63,9 +64,11 @@ public class Pedido {
 	
 	public static void PedidoDoDia(List<Pedido> item){
 		for (Pedido p : item) {
-		    System.out.println(p.cliente.getNome());
+		    System.out.println(p.cliente.getNome()+" "+p.cliente.getEndereco()+""+p.TotalDoPedido(p.cliente));
 		}
 	}
+	
+	
 	
 	
 }

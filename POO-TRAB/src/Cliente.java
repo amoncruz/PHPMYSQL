@@ -5,7 +5,7 @@ public class Cliente {
 	private int telefone;
 	private String Endereco;
 	private String referencia;
-	
+	public static double totalPorCliente; 
 	public Cliente(String nome, int telefone, String endereco, String referencia) {
 		super();
 		this.nomeC = nome;

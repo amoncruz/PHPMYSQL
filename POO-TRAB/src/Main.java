@@ -25,13 +25,9 @@ public class Main {
 	
 		Pedido p = new Pedido(coca,amon);
 		itemp.add(p);
-		p.RealizarPagamento();
-		p.RealizarPagamento();
 		Pedido b= new Pedido(cerveja,felipe);
-		
-		Pedido.TotalDoPedido(amon);
-		
-			ItemCardapio.MostrarCardapio(item);
+		itemp.add(b);
+		ItemCardapio.MostrarCardapio(item);
 		Pedido.PedidoDoDia(itemp);
 		  
 		

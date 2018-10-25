@@ -1,4 +1,3 @@
-
 public class Entregador {
 	
 	private static int qtd;
@@ -6,6 +5,7 @@ public class Entregador {
 	private String nome;
 	private String placaDoVeiculo;
 	Pedido pedido;
+	public static int total;
 	
 	public String getPlacaDoVeiculo() {
 		return placaDoVeiculo;
@@ -24,8 +24,11 @@ public class Entregador {
 	}
 	
 	static double ValorTotalDoPedido(){
-		 return totalDosPedidos=Pedido.total;
+		 return total;
 		
+	}
+	void setValorTotalDoPeidido(int total){
+		Entregador.total+=total;
 	}
 	int Comissao(){
 		return 1;
@@ -42,8 +45,5 @@ public class Entregador {
 		return pedido;
 	}
 
-	public static double getTotalDosPedidos() {
-		return totalDosPedidos;
-	}
 
 }

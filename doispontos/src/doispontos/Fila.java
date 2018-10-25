@@ -3,8 +3,14 @@ package doispontos;
 public class Fila {
 private int[] fila;
 
+
+public Fila(int t){
+	this.fila= new int[t];
+	this.num_elementos=0;
+}
+
 private int[] getFila() {
-	return fila;
+	return this.fila;
 }
 public void setFila(int[] fila) {
 	this.fila = fila;
@@ -18,10 +24,7 @@ public void setNum_elementos(int num_elementos) {
 
 private int num_elementos;
 
-public Fila(int t){
-	this.fila= new int[t];
-	this.num_elementos=0;
-}
+
 int getQuantidade(){
 	System.out.println(num_elementos);
 	return this.num_elementos;
@@ -43,15 +46,22 @@ boolean fila_vazia(){
 	
 	 }
 	 int retornarElemento(){
-			return fila[0]; 
+		 if(fila_vazia()){
+			 System.out.println("fila vazia");
+			return 0;
 		}
+		 return fila[0];
+	 }
 	 void enfileirar(int e){
 			if(fila_cheia()){
+				
 				System.out.println("lista cheia");
+				
 			}else{
+				
 				int indice=this.num_elementos;
 				this.fila[indice]=e;
-				this.num_elementos=num_elementos+1;
+				this.num_elementos++;
 					
 				
 				}
@@ -74,6 +84,7 @@ boolean fila_vazia(){
 					fila[i-1]=fila[ultimo_elemento];
 					fila[ultimo_elemento]=aux;
 				}
+			
 				fila[ultimo_elemento]=0;
 					
 			
@@ -85,6 +96,7 @@ boolean fila_vazia(){
 		}
 
 public void mostrar(){
+	
 		for(int i=0;i<fila.length;i++){
 			System.out.println(fila[i]);
 		}
