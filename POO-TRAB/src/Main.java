@@ -9,6 +9,7 @@ public class Main {
 		List<ItemCardapio> item= new ArrayList<ItemCardapio>();
 		
 		List<Pedido> itemp = new ArrayList<Pedido>();
+		List<ItemPedido> itemPedido=new ArrayList<ItemPedido>();
 		Bebida coca= new Bebida("coca",3.95);
 		Bebida cerveja= new Bebida("cerveja",5.15);
 		Lanche salgado= new Lanche("salgado",2.65);
@@ -22,13 +23,21 @@ public class Main {
 		Cliente amon =new Cliente("amon",88477246,"rua c 900","motel");
 		Cliente felipe =new Cliente("felipe",88477246,"rua c 900","motel");
 		
+		ItemPedido p = new ItemPedido(coca,3);
+		ItemPedido p2= new ItemPedido(cerveja,4);
+		
+		Pedido p3= new Pedido(p,amon);
+		Pedido p4= new Pedido(p2,amon);
+		itemp.add(p3);
 	
-		Pedido p = new Pedido(coca,amon);
-		itemp.add(p);
-		Pedido b= new Pedido(cerveja,felipe);
-		itemp.add(b);
+		Pedido p5= new Pedido(p,felipe);
+		
+		//Pedido p = new Pedido(coca,amon);
+		//itemp.add(p);
+		//Pedido b= new Pedido(cerveja,felipe);
+		//itemp.add(b);
 		ItemCardapio.MostrarCardapio(item);
-		Pedido.PedidoDoDia(itemp);
+		//Pedido.PedidoDoDia(itemp);
 		  
 		
 	}

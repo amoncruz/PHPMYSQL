@@ -34,5 +34,8 @@ public double getPreco(){
 public String getNome(){
 	return this.nome;
 }
+public  void retornarAoEstoque(int q){
+	this.qtd+=q;
+}
 
 }
