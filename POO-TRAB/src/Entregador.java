@@ -1,10 +1,15 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class Entregador {
 	
-	private static int qtd;
-	private static double totalDosPedidos;
+	private  int qtd;
+	private double totalDosPedidos;
 	private String nome;
 	private String placaDoVeiculo;
-	Pedido pedido;
+	
+	List<Pedido> pedidos= new ArrayList<Pedido>();
+	
 	public static int total;
 	
 	public String getPlacaDoVeiculo() {
@@ -14,10 +19,10 @@ public class Entregador {
 		super();
 		this.nome = nome;
 		this.placaDoVeiculo = placaDoVeiculo;
-		this.pedido = pedido;
+		pedidos.add(pedido);
 	}
-	public static void Entrega(){
-		 qtd++;
+	public  void Entrega(){
+		 this.qtd++;
 	}
 	int QuantidadeDeEntrega(){
 		return this.qtd;
@@ -41,9 +46,19 @@ public class Entregador {
 		return nome;
 	}
 	
-	public Pedido getPedido() {
-		return pedido;
+	public double getTotalDosPedidos() {
+		return totalDosPedidos;
 	}
+	public void setTotalDosPedidos(double totalDosPedidos) {
+		this.totalDosPedidos = totalDosPedidos;
+	}
+	
+	void PedidoDoDia(List<Pedido> pedidos){
+		for (Pedido pedido : pedidos) {
+			
+		}
+	}
+	
 
 
 }

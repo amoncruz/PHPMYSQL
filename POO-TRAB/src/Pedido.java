@@ -9,9 +9,9 @@ public class Pedido {
 	private boolean pago=false;
 	private Date data;
 	Cliente cliente;
-	Bebida b;
+	
 	ItemPedido itempedido;
-	ItemCardapio ic;
+
 public Pedido(ItemPedido itempedido,Cliente cliente){
 		this.cliente=cliente;
 		this.itempedido=itempedido;
@@ -74,7 +74,7 @@ public Pedido(ItemPedido itempedido,Cliente cliente){
 	public void setData(Date data) {
 		this.data = data;
 	}
-	
+	//Entregador
 	public static void PedidoDoDia(List<Pedido> item){
 		for (Pedido p : item) {
 		    System.out.println(p.cliente.getNome()+" "+p.cliente.getEndereco()+""+p.TotalDoPedido(p.cliente));
@@ -84,7 +84,7 @@ public Pedido(ItemPedido itempedido,Cliente cliente){
 		if(pago){
 			System.out.println("Não é possivel,conta já está paga"); 
 		}else{
-			b.retornarAoEstoque(qt);
+			//b.retornarAoEstoque(qt);
 		}
 	}
 	

@@ -14,7 +14,7 @@ void diminuirDoEstoque(int qtd){
 		System.out.println("estoque vazio");
 		return;
 	}
-	this.qtd=this.qtd-qtd;
+	this.qtd-=qtd;
 }
 boolean estoque_vazio(){
 	if(this.qtd==0){
@@ -25,14 +25,6 @@ boolean estoque_vazio(){
 }
 int getEstoque(){
 	return this.qtd;
-}
-@Override
-public double getPreco(){
-	return this.preco;
-}
-@Override
-public String getNome(){
-	return this.nome;
 }
 public  void retornarAoEstoque(int q){
 	this.qtd+=q;

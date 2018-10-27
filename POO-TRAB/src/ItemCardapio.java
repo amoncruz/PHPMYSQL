@@ -6,7 +6,7 @@ public class ItemCardapio {
 	
 protected String nome;
 protected double preco;
-private int itemVendido;
+//private int itemVendido;
 
 
 
@@ -44,9 +44,7 @@ public double getPreco() {
 public void setPreco(double preco) {
 	this.preco = preco;
 }
-public int ItensVendidos(){
-	return this.itemVendido++;
-}
+
 
 
 }
