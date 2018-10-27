@@ -59,8 +59,6 @@ public Pedido(ItemPedido itempedido,Cliente cliente){
 	*/
 	public void RealizarPagamento(){
 		if(!pago){
-		Entregador.ValorTotalDoPedido();
-		Entregador.Entrega();
 		total=0;
 		//this.itempedido.itemcardapio.ItensVendidos();
 		this.pago=true;
