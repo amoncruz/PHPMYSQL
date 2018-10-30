@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Entregador {
-	
+	int ItensVendidos;
 	private  int qtd;
 	private double totalDosPedidos;
 	private String nome;
@@ -15,13 +15,14 @@ public class Entregador {
 	public String getPlacaDoVeiculo() {
 		return placaDoVeiculo;
 	}
-	public Entregador(String nome, String placaDoVeiculo, Pedido pedido) {
+	public Entregador(String nome, String placaDoVeiculo) {
 		super();
 		this.nome = nome;
 		this.placaDoVeiculo = placaDoVeiculo;
-		pedidos.add(pedido);
+		
 	}
-	public  void Entrega(){
+	public  void Entrega(Pedido pedido){
+		pedidos.add(pedido);
 		 this.qtd++;
 	}
 	int QuantidadeDeEntrega(){
@@ -53,9 +54,9 @@ public class Entregador {
 		this.totalDosPedidos = totalDosPedidos;
 	}
 	
-	void PedidoDoDia(List<Pedido> pedidos){
-		for (Pedido pedido : pedidos) {
-			
+	void PedidoDoDia(){
+		for (Pedido pedido : pedidos){
+			System.out.println(pedido.cliente.getNome()+" "+pedido.TotalDoPedido(pedido.cliente));
 		}
 	}
 	

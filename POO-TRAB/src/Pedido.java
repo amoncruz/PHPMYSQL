@@ -9,32 +9,80 @@ public class Pedido {
 	private boolean pago=false;
 	private Date data;
 	Cliente cliente;
-	
+	ItemPedido b;
+	ItemPedido c;
+	ItemPedido d;
 	ItemPedido itempedido;
-
+	
+	/*
+	 Contrutor com 1 item
+	 	*/
 public Pedido(ItemPedido itempedido,Cliente cliente){
 		this.cliente=cliente;
 		this.itempedido=itempedido;
 		if(itempedido instanceof ItemPedido && cliente instanceof Cliente){
 			
-			System.out.println(this.total+=(this.itempedido.getQtd()*itempedido.itemcardapio.getPreco()));
-			//if(itempedido instanceof ){
-			//b.diminuirDoEstoque(itempedido.getQtd());
-			//System.out.println(b.getEstoque());
-			
+			this.total+=(this.itempedido.getQtd()*itempedido.itemcardapio.getPreco());		
 			System.out.println("--------------------");
 			}
-		}	
-	
-	
-	/*public Pedido(ItemPedido p,Cliente c){
-		
-		this.itempedido=p;
-		this.cliente=c;
-		this.total=itempedido.getQtd()*itempedido.itemcardapio.getPreco();
-		
-	}
+		}
+
+/*
+Contrutor com 2 itens
 	*/
+public Pedido(ItemPedido itempedido,ItemPedido b,Cliente cliente){
+	this.cliente=cliente;
+	this.itempedido=itempedido;
+	this.b=b;
+	if(itempedido instanceof ItemPedido && b instanceof ItemPedido && cliente instanceof Cliente){
+		
+		this.total+=(this.itempedido.getQtd()*itempedido.itemcardapio.getPreco());
+		this.total+=(this.b.getQtd()*b.itemcardapio.getPreco());
+		System.out.println("--------------------");
+		}
+	}
+
+/*
+Contrutor com 3 itens
+	*/
+
+public Pedido(ItemPedido itempedido,ItemPedido b,ItemPedido c,Cliente cliente){
+	this.cliente=cliente;
+	this.itempedido=itempedido;
+	this.b=b;
+	this.c=c;
+	if(itempedido instanceof ItemPedido && b instanceof ItemPedido &&
+			c instanceof ItemPedido && cliente instanceof Cliente){
+		
+		this.total+=(this.itempedido.getQtd()*itempedido.itemcardapio.getPreco());
+		this.total+=(this.b.getQtd()*b.itemcardapio.getPreco());
+		this.total+=(this.c.getQtd()*c.itemcardapio.getPreco());
+		System.out.println("--------------------");
+		}
+	}
+
+/*
+Construtor com 4 itens
+	*/
+
+public Pedido(ItemPedido itempedido,ItemPedido b,ItemPedido c,ItemPedido d,Cliente cliente){
+	this.cliente=cliente;
+	this.itempedido=itempedido;
+	this.b=b;
+	this.c=c;
+	this.d=d;
+	if(itempedido instanceof ItemPedido && b instanceof ItemPedido &&
+			c instanceof ItemPedido && d instanceof ItemPedido && cliente instanceof Cliente){
+		
+		this.total+=(this.itempedido.getQtd()*itempedido.itemcardapio.getPreco());
+		this.total+=(this.b.getQtd()*b.itemcardapio.getPreco());
+		this.total+=(this.c.getQtd()*c.itemcardapio.getPreco());
+		this.total+=(this.d.getQtd()*d.itemcardapio.getPreco());
+	
+		System.out.println("--------------------");
+		}
+	}
+
 	double TotalDoPedido(Cliente cliente){
 	
 	System.out.println("Nome do cliente "+cliente.getNome()+" Total: "+this.total);
@@ -42,25 +90,9 @@ public Pedido(ItemPedido itempedido,Cliente cliente){
 
 }
 		
-
-
-	/*public Pedido(Lanche b, Cliente cliente,Bebida e,Refeicao r,Sobremesa s){
-		if(e instanceof Bebida && b instanceof Lanche && cliente instanceof Cliente
-				&& r instanceof Refeicao && s instanceof Sobremesa){
-			@SuppressWarnings("resource")
-			Scanner c = new Scanner(System.in);
-			System.out.println("Digite a quantide de Bebida desejada");
-			qt=c.nextInt();
-			this.total+=(qt*b.getPreco());
-		
-		}
-		
-	}
-	*/
 	public void RealizarPagamento(){
 		if(!pago){
 		total=0;
-		//this.itempedido.itemcardapio.ItensVendidos();
 		this.pago=true;
 		}else{
 			System.out.println("Já foi pago");
@@ -72,17 +104,13 @@ public Pedido(ItemPedido itempedido,Cliente cliente){
 	public void setData(Date data) {
 		this.data = data;
 	}
-	//Entregador
-	public static void PedidoDoDia(List<Pedido> item){
-		for (Pedido p : item) {
-		    System.out.println(p.cliente.getNome()+" "+p.cliente.getEndereco()+""+p.TotalDoPedido(p.cliente));
-		}
-	}
-	public void cancelarPedido(){
+	
+	public void cancelarPedido(Cliente c){
 		if(pago){
 			System.out.println("Não é possivel,conta já está paga"); 
 		}else{
-			//b.retornarAoEstoque(qt);
+			c.totalPorCliente=0;
+			
 		}
 	}
 	

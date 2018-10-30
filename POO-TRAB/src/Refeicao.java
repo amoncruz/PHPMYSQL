@@ -7,14 +7,5 @@ public class Refeicao extends ItemCardapio {
 		// TODO Auto-generated constructor stub
 	}
 
-	@Override
-	public double getPreco(){
-		return this.preco;
-		
-	}
-	@Override
-	public String getNome(){
-		return this.nome;
-		
-	}
+
 }

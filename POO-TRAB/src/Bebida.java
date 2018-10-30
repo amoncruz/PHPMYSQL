@@ -14,6 +14,11 @@ void diminuirDoEstoque(int qtd){
 		System.out.println("estoque vazio");
 		return;
 	}
+		else if(qtd>this.qtd){
+			System.out.println("estoque insuficiente");
+			return;
+		}
+	
 	this.qtd-=qtd;
 }
 boolean estoque_vazio(){
