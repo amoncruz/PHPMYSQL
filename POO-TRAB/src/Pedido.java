@@ -6,7 +6,7 @@ public class Pedido {
 	
 	private double total;
 	private int qt;
-	private boolean pago=false;
+	
 	private Date data;
 	Cliente cliente;
 	ItemPedido b;
@@ -83,21 +83,16 @@ public Pedido(ItemPedido itempedido,ItemPedido b,ItemPedido c,ItemPedido d,Clien
 		}
 	}
 
-	double TotalDoPedido(Cliente cliente){
+	double TotalDoPedido(){
 	
-	System.out.println("Nome do cliente "+cliente.getNome()+" Total: "+this.total);
 	return this.total;
 
 }
-		
-	public void RealizarPagamento(){
-		if(!pago){
-		total=0;
-		this.pago=true;
-		}else{
-			System.out.println("Já foi pago");
-		}
+	void setTotal(double v){
+		this.total=v;
 	}
+		
+
 	public Date getData() {
 		return data;
 	}
@@ -105,14 +100,7 @@ public Pedido(ItemPedido itempedido,ItemPedido b,ItemPedido c,ItemPedido d,Clien
 		this.data = data;
 	}
 	
-	public void cancelarPedido(Cliente c){
-		if(pago){
-			System.out.println("Não é possivel,conta já está paga"); 
-		}else{
-			c.totalPorCliente=0;
-			
-		}
-	}
+	
 	
 	
 	

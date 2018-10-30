@@ -56,7 +56,7 @@ public class Entregador {
 	
 	void PedidoDoDia(){
 		for (Pedido pedido : pedidos){
-			System.out.println(pedido.cliente.getNome()+" "+pedido.TotalDoPedido(pedido.cliente));
+			System.out.println(pedido.cliente.getNome()+" "+pedido.TotalDoPedido());
 		}
 	}
 	

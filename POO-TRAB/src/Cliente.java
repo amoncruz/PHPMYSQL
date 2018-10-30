@@ -5,7 +5,7 @@ public class Cliente {
 	private int telefone;
 	private String Endereco;
 	private String referencia;
-	public static double totalPorCliente; 
+	private boolean pago=false;
 	public Cliente(String nome, int telefone, String endereco, String referencia) {
 		super();
 		this.nomeC = nome;
@@ -44,6 +44,25 @@ public class Cliente {
 
 	public void setReferencia(String referencia){
 		this.referencia = referencia;
+	}
+	
+	public void cancelarPedido(Pedido p){
+
+
+
+	p.setTotal(0);
+	p=null;
+	System.gc();
+			
+		}
+	
+	
+	public void RealizarPagamento(){
+		if(!pago){
+		this.pago=true;
+		}else{
+			System.out.println("Já foi pago");
+		}
 	}
 	
 	

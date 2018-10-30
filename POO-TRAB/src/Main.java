@@ -34,6 +34,7 @@ public class Main {
 		Entregador e2= new Entregador("Moises","1dafg");
 			e.Entrega(p24);
 			e.Entrega(p25);
+		amon.cancelarPedido(p25);
 		e.PedidoDoDia();
 		
 	
